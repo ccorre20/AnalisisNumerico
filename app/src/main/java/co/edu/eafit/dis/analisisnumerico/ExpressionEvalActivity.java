@@ -4,7 +4,7 @@ import com.fathzer.soft.javaluator.StaticVariableSet;
 
 public class ExpressionEvalActivity {
 
-    public double ExpressionEval(String arg, double num) {
+    public static double Function(String arg, double num) {
         final String expression = arg;
         final DoubleEvaluator eval = new DoubleEvaluator();
         final StaticVariableSet<Double> variables = new StaticVariableSet<Double>();

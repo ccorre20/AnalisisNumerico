@@ -9,11 +9,11 @@ import java.lang.ArithmeticException;
 
 public class SlaveActivity extends InitActivity{
 
-    protected double Bisection(double xi, double xs, int iter, double tol){
+    protected double Bisection(double xi, double xs, int iter, double tol, String f){
 
-        double yi = f(xi);
+        double yi = ExpressionEvalActivity.Function(f,xi);
 
-        double ys = f(xs);
+        double ys = ExpressionEvalActivity.Function(f,xs);
 
         if(yi == 0){
 
@@ -37,7 +37,7 @@ public class SlaveActivity extends InitActivity{
 
             double xm = (xi + xs)/2;
 
-            double ym = f(xm);
+            double ym = ExpressionEvalActivity.Function(f,xm);
 
             double E = tol + 1;
 
@@ -63,7 +63,7 @@ public class SlaveActivity extends InitActivity{
 
                 xm = (xi + xs)/2;
 
-                ym = f(xm);
+                ym = ExpressionEvalActivity.Function(f,xm);
 
                 E = Math.abs(xm - xaux);
 
