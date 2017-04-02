@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "co.edu.eafit.dis.analisisnumerico"
         minSdkVersion 23
@@ -30,10 +30,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
     compile files('src/main/java/libs/javaluator-3.0.1.jar')
     compile files('src/main/java/libs/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.DeveloperPaul123:SimpleBluetoothLibrary:f0c37e8848'
+    testCompile 'junit:junit:4.12'
 }

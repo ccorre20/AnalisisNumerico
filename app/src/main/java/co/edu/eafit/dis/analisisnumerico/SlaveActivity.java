@@ -1,94 +1,81 @@
 package co.edu.eafit.dis.analisisnumerico;
 
-/**
- * Created by sergi on 1/04/2017.
- */
-
+import android.bluetooth.BluetoothA2dp;
+import android.bluetooth.BluetoothDevice;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
-import java.lang.ArithmeticException;
 
-public class SlaveActivity extends InitActivity{
+import com.devpaul.bluetoothutillib.SimpleBluetooth;
+import com.devpaul.bluetoothutillib.utils.SimpleBluetoothListener;
 
-    protected double Bisection(double xi, double xs, int iter, double tol, String f){
+public class SlaveActivity extends AppCompatActivity {
 
-        double yi = ExpressionEvalActivity.Function(f,xi);
+    SimpleBluetooth simpleBluetooth;
 
-        double ys = ExpressionEvalActivity.Function(f,xs);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_slave);
+    }
 
-        if(yi == 0){
-
-            Toast.makeText(getApplicationContext(), "Found Solution, " + xi + " is a root",
-                    Toast.LENGTH_SHORT).show();
-            return xi;
-
-        }else if(ys == 0){
-
-            Toast.makeText(getApplicationContext(), "Found Solution, " + xs + " is a root",
-                    Toast.LENGTH_SHORT).show();
-            return xs;
-
-        }else if ((yi * ys) > 0){
-
-            Toast.makeText(getApplicationContext(), "Error, there is no root in the interval",
-                    Toast.LENGTH_SHORT).show();
-            throw new ArithmeticException("No root");
-
-        }else{
-
-            double xm = (xi + xs)/2;
-
-            double ym = ExpressionEvalActivity.Function(f,xm);
-
-            double E = tol + 1;
-
-            int count = 1;
-
-            while((ym != 0) && (E > tol) && (count < iter)){
-
-                if((ym * yi) < 0){
-
-                    xs = xm;
-
-                    ys = ym;
-
-                }else{
-
-                    xi = xm;
-
-                    yi = ym;
-
-                }
-
-                double xaux = xm;
-
-                xm = (xi + xs)/2;
-
-                ym = ExpressionEvalActivity.Function(f,xm);
-
-                E = Math.abs(xm - xaux);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        simpleBluetooth = new SimpleBluetooth(this, new SimpleBluetoothListener() {
+            @Override
+            public void onBluetoothA2DPRequested(BluetoothA2dp bluetoothA2dp) {
 
             }
 
-            if(ym == 0){
-
-                Toast.makeText(getApplicationContext(), "Found Solution, " + xm + " is a root",
-                        Toast.LENGTH_SHORT).show();
-                return xm;
-
-            }else if(E < tol){
-
-                Toast.makeText(getApplicationContext(), "Found Solution, " + xm + " is an " +
-                                "approximate root for E < tolerance",
-                        Toast.LENGTH_SHORT).show();
-                return xm;
-
-            }else{
-
-                Toast.makeText(getApplicationContext(), "Error, maximum number of iterations reached",
-                        Toast.LENGTH_SHORT).show();
-                throw new ArithmeticException("No root");
+            @Override
+            public void onDiscoveryStarted() {
 
             }
-        }
+
+            @Override
+            public void onDiscoveryFinished() {
+
+            }
+
+            @Override
+            public void onDevicePaired(BluetoothDevice device) {
+
+            }
+
+            @Override
+            public void onDeviceUnpaired(BluetoothDevice device) {
+
+            }
+
+            @Override
+            public void onDeviceDisconnected(BluetoothDevice device) {
+
+            }
+
+            @Override
+            public void onDeviceConnected(BluetoothDevice device) {
+                Toast.makeText(SlaveActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onBluetoothDataReceived(byte[] bytes, String data) {
+                String[] vals = data.split(";");
+                SlaveActivity.this.ProcessData(vals);
+            }
+        });
+        simpleBluetooth.initializeSimpleBluetooth();
+    }
+
+    public void onVisibleClick(View view){
+        simpleBluetooth.makeDiscoverable(300);
+    }
+
+    public void ProcessData(String[] data){
+        String ans = FunctionUtil.Bisection(Double.parseDouble(data[3]), Double.parseDouble(data[4]),
+                Integer.parseInt(data[1]), Double.parseDouble(data[2]), data[0]);
+        simpleBluetooth.sendData(ans);
     }
 }

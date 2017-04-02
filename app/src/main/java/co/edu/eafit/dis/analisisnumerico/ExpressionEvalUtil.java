@@ -2,7 +2,7 @@ package co.edu.eafit.dis.analisisnumerico;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.fathzer.soft.javaluator.StaticVariableSet;
 
-public class ExpressionEvalActivity {
+public class ExpressionEvalUtil {
 
     public static double Function(String arg, double num) {
         final String expression = arg;
