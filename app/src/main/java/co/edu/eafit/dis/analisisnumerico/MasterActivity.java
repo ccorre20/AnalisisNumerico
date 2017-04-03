@@ -40,10 +40,6 @@ public class MasterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
-        /*
-        REQUEST_ENABLE_BT = 1;
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        */
         exprText = (EditText)findViewById(R.id.exprText);
         iterText = (EditText)findViewById(R.id.iterText);
         tolText = (EditText)findViewById(R.id.tolText);
@@ -57,14 +53,6 @@ public class MasterActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        /*
-        if(mBluetoothAdapter != null){
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }
-        }
-        */
         simpleBluetooth = new SimpleBluetooth(this, new SimpleBluetoothListener() {
             @Override
             public void onBluetoothA2DPRequested(BluetoothA2dp bluetoothA2dp) {
@@ -111,12 +99,6 @@ public class MasterActivity extends AppCompatActivity {
     }
 
     public void onSearchClick(View view){
-        /*
-        Intent discoverableIntent =
-                new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
-        startActivity(discoverableIntent);
-        */
         simpleBluetooth.scan(SCAN_REQUEST);
     }
 
@@ -129,22 +111,7 @@ public class MasterActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        /*
-        if(requestCode == REQUEST_ENABLE_BT){
-            if(resultCode != RESULT_OK){
-                AlertDialog alertDialog = new AlertDialog.Builder(MasterActivity.this).create();
-                alertDialog.setTitle("Alerta");
-                alertDialog.setMessage("Algo fallo con el Bluetooth");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                alertDialog.show();
-            }
-        }
-        */
+
         if(requestCode == SCAN_REQUEST){
             if(resultCode == RESULT_OK){
                 curMacAddress = data.getStringExtra(DeviceDialog.DEVICE_DIALOG_DEVICE_ADDRESS_EXTRA);
