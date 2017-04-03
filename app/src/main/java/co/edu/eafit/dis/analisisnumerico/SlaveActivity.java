@@ -67,6 +67,7 @@ public class SlaveActivity extends AppCompatActivity {
             }
         });
         simpleBluetooth.initializeSimpleBluetooth();
+        simpleBluetooth.createBluetoothServerConnection();
     }
 
     public void onVisibleClick(View view){

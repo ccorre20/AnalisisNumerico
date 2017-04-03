@@ -148,7 +148,7 @@ public class MasterActivity extends AppCompatActivity {
         if(requestCode == SCAN_REQUEST){
             if(resultCode == RESULT_OK){
                 curMacAddress = data.getStringExtra(DeviceDialog.DEVICE_DIALOG_DEVICE_ADDRESS_EXTRA);
-                simpleBluetooth.connectToBluetoothDevice(curMacAddress);
+                simpleBluetooth.connectToBluetoothServer(curMacAddress);
             }
         }
     }
