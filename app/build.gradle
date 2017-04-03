@@ -31,7 +31,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('src/main/java/libs/javaluator-3.0.1.jar')
-    compile files('src/main/java/libs/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'

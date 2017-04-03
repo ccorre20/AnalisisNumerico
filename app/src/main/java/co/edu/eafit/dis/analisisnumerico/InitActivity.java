@@ -18,7 +18,7 @@ public class InitActivity extends AppCompatActivity {
     }
 
     public void onSlaveClick(View view){
-        startActivity(new Intent(this, FunctionUtil.class));
+        startActivity(new Intent(this, SlaveActivity.class));
     }
 
 }
