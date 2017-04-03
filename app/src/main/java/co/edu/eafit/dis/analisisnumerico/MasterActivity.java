@@ -24,10 +24,6 @@ import java.util.Set;
 
 public class MasterActivity extends AppCompatActivity {
 
-    /*
-    BluetoothAdapter mBluetoothAdapter;
-    int REQUEST_ENABLE_BT;
-    */
     SimpleBluetooth simpleBluetooth;
     private static final int SCAN_REQUEST = 119;
     private static final int CHOOSE_SERVER_REQUEST = 120;
