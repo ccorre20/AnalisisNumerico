@@ -1,10 +1,7 @@
 package co.edu.eafit.dis.analisisnumerico;
 
-import android.app.AlertDialog;
 import android.bluetooth.BluetoothA2dp;
-import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
