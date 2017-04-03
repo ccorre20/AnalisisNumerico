@@ -15,10 +15,6 @@ import com.devpaul.bluetoothutillib.SimpleBluetooth;
 import com.devpaul.bluetoothutillib.dialogs.DeviceDialog;
 import com.devpaul.bluetoothutillib.utils.SimpleBluetoothListener;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.Set;
-
 public class MasterActivity extends AppCompatActivity {
 
     SimpleBluetooth simpleBluetooth;
