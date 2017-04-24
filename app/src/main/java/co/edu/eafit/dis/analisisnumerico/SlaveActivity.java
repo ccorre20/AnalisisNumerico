@@ -74,7 +74,7 @@ public class SlaveActivity extends AppCompatActivity {
     }
 
     public void ProcessData(String[] data){
-        String ans = FunctionUtil.Bisection(Double.parseDouble(data[3]), Double.parseDouble(data[4]),
+        String ans = BisectionUtil.Bisection(Double.parseDouble(data[3]), Double.parseDouble(data[4]),
                 Integer.parseInt(data[1]), Double.parseDouble(data[2]), data[0]);
         simpleBluetooth.sendData(ans);
     }
