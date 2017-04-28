@@ -4,7 +4,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class NewtonMethodUtil {
 
-    public void NewtonMethod(double x0,double tol,int iter, String f, String fp){
+    public static String NewtonMethod(double x0,double tol,int iter, String f, String fp){
         double y = ExpressionEvalUtil.Function(f,x0);
         double dy = ExpressionEvalUtil.Function(fp,x0);
         int count = 0;
@@ -18,13 +18,13 @@ public class NewtonMethodUtil {
             count ++;
         }
         if (y == 0) {
-            System.out.println("x0 is a root");
+            return Double.toString(x0)+" is a root";
         }else if (dy == 0){
-            System.out.println("x1 is a root");
+            return "Division by zero";
         }else if (E < tol){
-            System.out.println("x1 is an approximate root by error < tolerance");
+            return Double.toString(x0)+" is an approximate root, error < tolerance";
         }else{
-            System.out.println("Failure, has exceeded the maximum number of iterations");
+            return "Failure, has exceeded the maximum number of iterations";
         }
     }
 

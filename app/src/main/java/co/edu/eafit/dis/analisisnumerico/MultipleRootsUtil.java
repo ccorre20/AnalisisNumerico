@@ -3,7 +3,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class MultipleRootsUtil {
 
-    public void MultipleRoots(double x0,double tol,int iter, String f, String fp, String fpp){
+    public static String MultipleRoots(double x0,double tol,int iter, String f, String fp, String fpp){
         double y = ExpressionEvalUtil.Function(f,x0);
         double dy = ExpressionEvalUtil.Function(fp,x0);
         double ddy = ExpressionEvalUtil.Function(fpp,x0);
@@ -19,15 +19,15 @@ public class MultipleRootsUtil {
             count ++;
         }
         if (y == 0) {
-            System.out.println("x0 is a root");
+            return Double.toString(x0)+" is a root";
         }else if (dy ==0) {
-            System.out.println("First derivative equal to 0");
+            return "First derivative equal to 0";
         }else if (ddy==0) {
-            System.out.println("Second derivative equal to 0");
+            return "Second derivative equal to 0";
         }else if (E < tol){
-            System.out.println("x1 is an approximate root for error < tolerance");
+            return Double.toString(x0)+" is an approximate root, error < tolerance";
         }else{
-            System.out.println("Failure, has exceeded the maximum number of iterations");
+            return "Failure, has exceeded the maximum number of iterations";
         }
     }
 

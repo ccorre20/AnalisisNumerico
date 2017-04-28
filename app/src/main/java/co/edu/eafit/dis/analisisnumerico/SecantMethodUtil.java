@@ -5,7 +5,7 @@ public class SecantMethodUtil {
 
     static ExpressionEvalUtil exp= new ExpressionEvalUtil();
 
-    public void SecantMethod(double x0,double x1, double tol,int iter, String f) {
+    public static String SecantMethod(double x0,double x1, double tol,int iter, String f) {
         double y0 = ExpressionEvalUtil.Function(f, x0);
         double y1 = ExpressionEvalUtil.Function(f, x1);
         if (y0 != 0) {
@@ -26,16 +26,18 @@ public class SecantMethodUtil {
                 count++;
             }
             if (y1 == 0) {
-                System.out.println("x0 is a root");
+                return Double.toString(x0)+" is a root";
             } else if (y2 == 0) {
-                System.out.println("x2 is a root");
+                return Double.toString(x1)+" is a root";
             } else if (E < tol) {
-                System.out.println("x1 is an approximate root for error < tolerance");
+                return Double.toString(x1)+" is an approximate root, error < tolerance";
             } else if (div == 0) {
-                System.out.println("Division by zero");
+                return "Division by zero";
             } else {
-                System.out.println("Failure, has exceeded the maximum number of iterations");
+                return "Failure, has exceeded the maximum number of iterations";
             }
+        }else {
+            return Double.toString(x0)+" is a root";
         }
     }
 }

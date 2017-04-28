@@ -13,7 +13,7 @@ public class BisectionUtil {
         }else if(ys == 0){
             return Double.toString(xs);
         }else if ((yi * ys) > 0){
-            return "Error";
+            return "Error, There is no root in the interval";
         }else{
             double xm = (xi + xs)/2;
             double ym = ExpressionEvalUtil.Function(f,xm);
@@ -35,9 +35,9 @@ public class BisectionUtil {
             if(ym == 0){
                 return Double.toString(xm);
             }else if(E < tol){
-                return Double.toString(xm) + " (aprox)";
+                return Double.toString(xm) + " is an approximate root, E < tolerance";
             }else{
-                return "Error";
+                return "Failure, has exceeded the maximum number of iterations";
             }
         }
     }

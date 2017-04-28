@@ -3,15 +3,15 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class FalseRuleUtil {
 
-    public void FalseRule(double xi, double xs, int iter, double tol, String f){
+    public static String FalseRule(double xi, double xs, int iter, double tol, String f){
         double yi = ExpressionEvalUtil.Function(f,xi);
         double ys = ExpressionEvalUtil.Function(f,xs);
         if (yi == 0){
-            System.out.println("xi is a root");
+            return Double.toString(xi) +" is a root";
         }else if (ys == 0){
-            System.out.println("xs is root");
+            return Double.toString(xs) +" is root";
         }else if ((yi * ys)  > 0) {
-            System.out.println("There is no root in the interval");
+            return "Error, There is no root in the interval";
         }else{
             double xm = xi - ((yi*(xs-xi))/(ys- yi));
             double ym = ExpressionEvalUtil.Function(f,xm);
@@ -31,11 +31,11 @@ public class FalseRuleUtil {
                 E = Math.abs(xm - xaux);
             }
             if (ym == 0){
-                System.out.println("xm is a root");
+                return Double.toString(xm)+" is a root";
             }else if (E < tol){
-                System.out.println("xm is an approximate root for E < tolerance");
+                return Double.toString(xm)+" is an approximate root, E < tolerance";
             }else{
-                System.out.println("Failure");
+                return "Failure, has exceeded the maximum number of iterations";
             }
         }
     }

@@ -2,7 +2,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class FixedPointUtil {
 
-    public void FixedPoint(double x0,double tol,int iter, String f, String g){
+    public static String FixedPoint(double x0,double tol,int iter, String f, String g){
         double y = ExpressionEvalUtil.Function(f,x0);
         int count = 0;
         double E = tol + 1;
@@ -14,11 +14,11 @@ public class FixedPointUtil {
             count ++;
         }
         if (y == 0) {
-            System.out.println("x0 is a root");
+            return Double.toString(x0)+" is a root";
         }else if (E < tol){
-            System.out.println("x1 is an approximate root for error < tolerance");
+            return Double.toString(x0)+" is an approximate root, error < tolerance";
         }else{
-            System.out.println("Failure, has exceeded the maximum number of iterations");
+            return "Failure, has exceeded the maximum number of iterations";
         }
     }
 
