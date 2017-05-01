@@ -15,7 +15,7 @@ import com.devpaul.bluetoothutillib.SimpleBluetooth;
 import com.devpaul.bluetoothutillib.dialogs.DeviceDialog;
 import com.devpaul.bluetoothutillib.utils.SimpleBluetoothListener;
 
-public class MasterActivity extends AppCompatActivity {
+public class BisectionActivity extends AppCompatActivity {
 
     SimpleBluetooth simpleBluetooth;
     private static final int SCAN_REQUEST = 119;
@@ -28,7 +28,7 @@ public class MasterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_master);
+        setContentView(R.layout.activity_bisection);
         exprText = (EditText)findViewById(R.id.exprText);
         iterText = (EditText)findViewById(R.id.iterText);
         tolText = (EditText)findViewById(R.id.tolText);
@@ -75,13 +75,13 @@ public class MasterActivity extends AppCompatActivity {
 
             @Override
             public void onDeviceConnected(BluetoothDevice device) {
-                Toast.makeText(MasterActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
-                MasterActivity.this.sendBtn.setEnabled(true);
+                Toast.makeText(BisectionActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
+                BisectionActivity.this.sendBtn.setEnabled(true);
             }
 
             @Override
             public void onBluetoothDataReceived(byte[] bytes, String data) {
-                MasterActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
+                BisectionActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
             }
         });
         simpleBluetooth.initializeSimpleBluetooth();

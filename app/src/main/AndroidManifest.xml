@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MasterActivity" />
+        <activity android:name=".BisectionActivity" />
         <activity android:name=".SlaveActivity"></activity>
     </application>
 
