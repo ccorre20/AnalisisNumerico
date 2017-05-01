@@ -3,7 +3,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class MultipleRootsUtil {
 
-    public static String MultipleRoots(double x0,double tol,int iter, String f, String fp, String fpp){
+    public static String MultipleRoots(String f, String fp, String fpp, int iter, double tol, double x0){
         double y = ExpressionEvalUtil.Function(f,x0);
         double dy = ExpressionEvalUtil.Function(fp,x0);
         double ddy = ExpressionEvalUtil.Function(fpp,x0);

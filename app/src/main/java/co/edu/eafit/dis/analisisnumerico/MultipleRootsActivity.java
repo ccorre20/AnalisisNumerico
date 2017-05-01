@@ -15,25 +15,26 @@ import com.devpaul.bluetoothutillib.SimpleBluetooth;
 import com.devpaul.bluetoothutillib.dialogs.DeviceDialog;
 import com.devpaul.bluetoothutillib.utils.SimpleBluetoothListener;
 
-public class BisectionActivity extends AppCompatActivity {
+public class MultipleRootsActivity extends AppCompatActivity {
 
     SimpleBluetooth simpleBluetooth;
     private static final int SCAN_REQUEST = 119;
     private static final int CHOOSE_SERVER_REQUEST = 120;
     String curMacAddress;
 
-    EditText exprText, iterText, tolText, infText, supText, resultText;
+    EditText expText, exp2Text, exp3Text, iterText, tolText, iniValText,resultText;
     Button sendBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bisection);
-        exprText = (EditText)findViewById(R.id.exprText);
+        setContentView(R.layout.activity_multiple_roots);
+        expText = (EditText)findViewById(R.id.expText);
+        exp2Text = (EditText)findViewById(R.id.exp2Text);
+        exp3Text = (EditText)findViewById(R.id.exp3Text);
         iterText = (EditText)findViewById(R.id.iterText);
         tolText = (EditText)findViewById(R.id.tolText);
-        infText = (EditText)findViewById(R.id.infText);
-        supText = (EditText)findViewById(R.id.supText);
+        iniValText = (EditText)findViewById(R.id.iniValText);
         resultText = (EditText)findViewById(R.id.resultText);
 
         sendBtn = (Button)findViewById(R.id.sendBtn);
@@ -75,13 +76,13 @@ public class BisectionActivity extends AppCompatActivity {
 
             @Override
             public void onDeviceConnected(BluetoothDevice device) {
-                Toast.makeText(BisectionActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
-                BisectionActivity.this.sendBtn.setEnabled(true);
+                Toast.makeText(MultipleRootsActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
+                MultipleRootsActivity.this.sendBtn.setEnabled(true);
             }
 
             @Override
             public void onBluetoothDataReceived(byte[] bytes, String data) {
-                BisectionActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
+                MultipleRootsActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
             }
         });
         simpleBluetooth.initializeSimpleBluetooth();
@@ -92,9 +93,9 @@ public class BisectionActivity extends AppCompatActivity {
     }
 
     public void onSendClick(View view){
-        String msg = "Bisection" + ";" + exprText.getText().toString() + ";" + iterText.getText().toString() +
-                ";" + tolText.getText().toString() + ";" + infText.getText().toString() +
-                ";" + supText.getText().toString();
+        String msg = "MultipleRoots" + ";" + expText.getText().toString() + ";" + exp2Text.getText().toString() +
+                ";" + exp3Text.getText().toString() + ";" + iterText.getText().toString() +
+                ";" + tolText.getText().toString() + ";" + iniValText.getText().toString();
         simpleBluetooth.sendData(msg);
     }
 

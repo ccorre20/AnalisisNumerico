@@ -2,7 +2,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class FixedPointUtil {
 
-    public static String FixedPoint(double x0,double tol,int iter, String f, String g){
+    public static String FixedPoint(String f,String g, int iter, double tol, double x0){
         double y = ExpressionEvalUtil.Function(f,x0);
         int count = 0;
         double E = tol + 1;

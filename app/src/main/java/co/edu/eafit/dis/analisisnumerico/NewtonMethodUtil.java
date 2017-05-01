@@ -4,7 +4,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class NewtonMethodUtil {
 
-    public static String NewtonMethod(double x0,double tol,int iter, String f, String fp){
+    public static String NewtonMethod(String f, String fp, int iter, double tol,double x0){
         double y = ExpressionEvalUtil.Function(f,x0);
         double dy = ExpressionEvalUtil.Function(fp,x0);
         int count = 0;

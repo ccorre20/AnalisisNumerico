@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.edu.eafit.dis.analisisnumerico.IncrementalSearchActivity">
+
+    <EditText
+        android:id="@+id/expText"
+        android:layout_width="283dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="87dp"
+        android:ems="10"
+        android:hint="@string/fx"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/iterText"
+        android:layout_width="283dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="148dp"
+        android:ems="10"
+        android:hint="@string/iter"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/deltaText"
+        android:layout_width="283dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="202dp"
+        android:ems="10"
+        android:hint="@string/del"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/iniValText"
+        android:layout_width="283dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="264dp"
+        android:ems="10"
+        android:hint="@string/x0"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="321dp"
+        android:onClick="onSendClick"
+        android:text="@string/send"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/conBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="447dp"
+        android:onClick="onSearchClick"
+        android:text="@string/con"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="379dp"
+        android:ems="10"
+        android:hint="@string/res"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

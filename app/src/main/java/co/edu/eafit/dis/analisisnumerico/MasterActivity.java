@@ -35,13 +35,37 @@ public class MasterActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String value = (String)list_view.getItemAtPosition(position);
+                        Intent intent;
                         switch(value){
                             case "Incremental Search":
-                                break;
-                            case "Bisection":
-                                Intent intent = new Intent(MasterActivity.this,BisectionActivity.class);
+                                intent = new Intent(MasterActivity.this,IncrementalSearchActivity.class);
                                 startActivity(intent);
                                 break;
+                            case "Bisection":
+                                intent = new Intent(MasterActivity.this,BisectionActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "False Rule":
+                                intent = new Intent(MasterActivity.this,FalseRuleActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "Fixed Point":
+                                intent = new Intent(MasterActivity.this,FixedPointActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "Newton":
+                                intent = new Intent(MasterActivity.this,NewtonActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "Secant":
+                                intent = new Intent(MasterActivity.this,SecantActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "Multiple Roots":
+                                intent = new Intent(MasterActivity.this,FixedPointActivity.class);
+                                startActivity(intent);
+                                break;
+
                         }
 
                     }

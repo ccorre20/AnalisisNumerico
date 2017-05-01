@@ -4,7 +4,7 @@ package co.edu.eafit.dis.analisisnumerico;
 public class BisectionUtil {
 
 
-    public static String Bisection(double xi, double xs, int iter, double tol, String f){
+    public static String Bisection(String f, int iter, double tol, double xi, double xs){
         double yi = ExpressionEvalUtil.Function(f,xi);
         double ys = ExpressionEvalUtil.Function(f,xs);
 

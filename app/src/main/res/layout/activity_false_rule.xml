@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.eafit.dis.analisisnumerico.BisectionActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:context="co.edu.eafit.dis.analisisnumerico.FalseRuleActivity">
+
 
     <EditText
         android:id="@+id/exprText"
@@ -127,4 +126,5 @@
         app:layout_constraintRight_toRightOf="@+id/resultText"
         app:layout_constraintTop_toBottomOf="@+id/resultText"
         tools:layout_constraintTop_creator="1" />
+
 </android.support.constraint.ConstraintLayout>

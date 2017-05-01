@@ -3,7 +3,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class FalseRuleUtil {
 
-    public static String FalseRule(double xi, double xs, int iter, double tol, String f){
+    public static String FalseRule(String f, int iter, double tol, double xi, double xs){
         double yi = ExpressionEvalUtil.Function(f,xi);
         double ys = ExpressionEvalUtil.Function(f,xs);
         if (yi == 0){

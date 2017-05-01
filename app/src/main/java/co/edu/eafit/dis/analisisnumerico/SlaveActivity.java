@@ -74,8 +74,42 @@ public class SlaveActivity extends AppCompatActivity {
     }
 
     public void ProcessData(String[] data){
-        String ans = BisectionUtil.Bisection(Double.parseDouble(data[3]), Double.parseDouble(data[4]),
-                Integer.parseInt(data[1]), Double.parseDouble(data[2]), data[0]);
+        String ans="";
+        switch(data[0]) {
+            case "IncrementalSearch":
+                ans = IncrementalSearchUtil.IncrementalSearch(data[1], Integer.parseInt(data[2]),
+                        Double.parseDouble(data[3]),Double.parseDouble(data[4]));
+                break;
+            case "Bisection":
+                ans = BisectionUtil.Bisection(data[1], Integer.parseInt(data[2]),
+                        Double.parseDouble(data[3]), Double.parseDouble(data[4]),
+                        Double.parseDouble(data[5]));
+                break;
+            case "FalseRule":
+                ans = FalseRuleUtil.FalseRule(data[1],Integer.parseInt(data[2]),
+                        Double.parseDouble(data[3]), Double.parseDouble(data[4]),
+                        Double.parseDouble(data[5]));
+                break;
+            case "FixedPoint":
+                ans = FixedPointUtil.FixedPoint(data[1], data[2], Integer.parseInt(data[3]),
+                         Double.parseDouble(data[4]), Double.parseDouble(data[5]));
+                break;
+            case "Newton":
+                ans = NewtonMethodUtil.NewtonMethod(data[1], data[2], Integer.parseInt(data[3]),
+                        Double.parseDouble(data[4]), Double.parseDouble(data[5]));
+                break;
+            case "Secant":
+                // expText, iterText, tolText, infText, supText
+                ans = SecantMethodUtil.SecantMethod(data[1], Integer.parseInt(data[2]),
+                        Double.parseDouble(data[3]), Double.parseDouble(data[4]),
+                        Double.parseDouble(data[5]));
+                break;
+            case "MultipleRoots":
+                ans = MultipleRootsUtil.MultipleRoots(data[1], data[2], data[3],Integer.parseInt(data[4]),
+                        Double.parseDouble(data[5]), Double.parseDouble(data[6]));
+                break;
+
+        }
         simpleBluetooth.sendData(ans);
     }
 }

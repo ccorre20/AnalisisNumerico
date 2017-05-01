@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Analisis Numerico</string>
+
+    <string name="fx">Inserte la función f(x)</string>
+    <string name="ffx">Inserte la Primera derivada</string>
+    <string name="fffx">Inserte la Segunda derivada</string>
+    <string name="gx">Inserte la función g(x)</string>
+    <string name="xi">Inserte limite inferior</string>
+    <string name="xs">Inserte limite superior</string>
+    <string name="x0">Inserte valor inicial</string>
+    <string name="tol">Inserte la toleracia</string>
+    <string name="iter">Inserte el numero de iteracciones</string>
+    <string name="res">Resultado</string>
+    <string name="send">ENVIAR</string>
+    <string name="con">Comenzar Proceso Conexión</string>
+    <string name="del">Inserte Delta</string>
 </resources>

@@ -15,7 +15,8 @@ import com.devpaul.bluetoothutillib.SimpleBluetooth;
 import com.devpaul.bluetoothutillib.dialogs.DeviceDialog;
 import com.devpaul.bluetoothutillib.utils.SimpleBluetoothListener;
 
-public class BisectionActivity extends AppCompatActivity {
+public class FalseRuleActivity extends AppCompatActivity {
+
 
     SimpleBluetooth simpleBluetooth;
     private static final int SCAN_REQUEST = 119;
@@ -28,7 +29,7 @@ public class BisectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bisection);
+        setContentView(R.layout.activity_false_rule);
         exprText = (EditText)findViewById(R.id.exprText);
         iterText = (EditText)findViewById(R.id.iterText);
         tolText = (EditText)findViewById(R.id.tolText);
@@ -75,13 +76,13 @@ public class BisectionActivity extends AppCompatActivity {
 
             @Override
             public void onDeviceConnected(BluetoothDevice device) {
-                Toast.makeText(BisectionActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
-                BisectionActivity.this.sendBtn.setEnabled(true);
+                Toast.makeText(FalseRuleActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
+                FalseRuleActivity.this.sendBtn.setEnabled(true);
             }
 
             @Override
             public void onBluetoothDataReceived(byte[] bytes, String data) {
-                BisectionActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
+                FalseRuleActivity.this.resultText.setText(data, TextView.BufferType.EDITABLE);
             }
         });
         simpleBluetooth.initializeSimpleBluetooth();
@@ -92,7 +93,7 @@ public class BisectionActivity extends AppCompatActivity {
     }
 
     public void onSendClick(View view){
-        String msg = "Bisection" + ";" + exprText.getText().toString() + ";" + iterText.getText().toString() +
+        String msg = "FalseRule" + ";" + exprText.getText().toString() + ";" + iterText.getText().toString() +
                 ";" + tolText.getText().toString() + ";" + infText.getText().toString() +
                 ";" + supText.getText().toString();
         simpleBluetooth.sendData(msg);

@@ -3,7 +3,7 @@ package co.edu.eafit.dis.analisisnumerico;
 
 public class IncrementalSearchUtil {
 
-    public static String IncrementalSearch(double x0, double delta, int iter, String f){
+    public static String IncrementalSearch(String f, int iter, double delta, double x0){
         double y0 = ExpressionEvalUtil.Function(f,x0);
         if (y0 == 0){
             return Double.toString(x0)+" is a root";

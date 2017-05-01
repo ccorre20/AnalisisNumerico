@@ -23,7 +23,13 @@
         </activity>
         <activity android:name=".BisectionActivity" />
         <activity android:name=".SlaveActivity" />
-        <activity android:name=".MasterActivity"></activity>
+        <activity android:name=".MasterActivity" />
+        <activity android:name=".FalseRuleActivity" />
+        <activity android:name=".FixedPointActivity" />
+        <activity android:name=".IncrementalSearchActivity" />
+        <activity android:name=".MultipleRootsActivity" />
+        <activity android:name=".NewtonActivity" />
+        <activity android:name=".SecantActivity"></activity>
     </application>
 
 </manifest>

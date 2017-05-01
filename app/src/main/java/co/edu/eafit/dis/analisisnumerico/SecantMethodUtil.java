@@ -5,7 +5,7 @@ public class SecantMethodUtil {
 
     static ExpressionEvalUtil exp= new ExpressionEvalUtil();
 
-    public static String SecantMethod(double x0,double x1, double tol,int iter, String f) {
+    public static String SecantMethod(String f, int iter, double tol, double x1, double x0) {
         double y0 = ExpressionEvalUtil.Function(f, x0);
         double y1 = ExpressionEvalUtil.Function(f, x1);
         if (y0 != 0) {

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.edu.eafit.dis.analisisnumerico.MultipleRootsActivity">
+
+
+    <EditText
+        android:id="@+id/expText"
+        android:layout_width="313dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="@string/fx"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="7dp" />
+
+    <EditText
+        android:id="@+id/exp2Text"
+        android:layout_width="315dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/ffx"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="58dp" />
+
+    <EditText
+        android:id="@+id/exp3Text"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/fffx"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="114dp" />
+
+    <EditText
+        android:id="@+id/iterText"
+        android:layout_width="313dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/iter"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="169dp" />
+
+    <EditText
+        android:id="@+id/tolText"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="@string/tol"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="225dp" />
+
+    <EditText
+        android:id="@+id/iniValText"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/x0"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="281dp" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="333dp"
+        android:onClick="onSendClick"
+        android:text="@string/send"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="393dp"
+        android:ems="10"
+        android:hint="@string/res"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/conBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="447dp"
+        android:onClick="onSearchClick"
+        android:text="@string/con"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
