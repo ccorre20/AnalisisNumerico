@@ -14,7 +14,7 @@ public class InitActivity extends AppCompatActivity {
     }
 
     public void onMasterClick(View view){
-        startActivity(new Intent(this, BisectionActivity.class));
+        startActivity(new Intent(this, MasterActivity.class));
     }
 
     public void onSlaveClick(View view){

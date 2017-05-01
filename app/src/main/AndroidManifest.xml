@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BisectionActivity" />
-        <activity android:name=".SlaveActivity"></activity>
+        <activity android:name=".SlaveActivity" />
+        <activity android:name=".MasterActivity"></activity>
     </application>
 
 </manifest>
